@@ -9,8 +9,8 @@ class MutiHeadAttention(nn.Module):
 
         # 初始化Q,K,V矩阵
         self.q_linear = nn.Linear(dim, dim)
-        self.k_linear = nn.Linear(dim, dim)
-        self.v_linear = nn.Linear(dim, dim)
+        self.k_linear = nn.Linear(dim, self.head_dim)
+        self.v_linear = nn.Linear(dim, self.head_dim)
 
         # 输出线性层
         self.out_linear = nn.Linear(dim, dim)
